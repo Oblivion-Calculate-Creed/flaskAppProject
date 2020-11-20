@@ -1,5 +1,0 @@
-- hosts: jenkins
-  become: true
-  tasks:
-    - name: install kubernetes from script
-      script: /home/ubuntu/practicalProject/ansibleProject/roles/kubernetes/tasks/kubernetes_install.sh

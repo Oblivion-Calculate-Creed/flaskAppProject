@@ -1,5 +1,0 @@
-- hosts: jenkins
-  become: true
-  tasks:
-    - name: install aws_cli
-      script: /home/ubuntu/practicalProject/ansibleProject/roles/awscli/tasks/awscli_install.sh
