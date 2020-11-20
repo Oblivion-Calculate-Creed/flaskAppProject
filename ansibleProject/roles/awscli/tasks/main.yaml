@@ -1,5 +1,5 @@
 - hosts: jenkins
   become: true
   tasks:
-    - name: install jenkins from script
+    - name: install aws_cli
       script: /home/ubuntu/practicalProject/ansibleProject/roles/awscli/tasks/awscli_install.sh

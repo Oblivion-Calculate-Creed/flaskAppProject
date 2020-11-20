@@ -3,7 +3,7 @@
 docker
 
 [jenkins]
-#uses config file host
+52.49.123.101
 jenkins
 
 [nginx]
