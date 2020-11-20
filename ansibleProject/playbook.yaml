@@ -1,0 +1,25 @@
+  ---
+- hosts: all
+  become: true
+  tasks:
+    - name: install initial programs
+      script: /home/ubuntu/practicalProject/ansibleProject/roles/initialinstall/initial_install.sh
+
+    - name: install docker from script
+      script: /home/ubuntu/practicalProject/ansibleProject/roles/docker/tasks/docket_install.sh
+
+    - name: install docker_compose from script
+      script: /home/ubuntu/practicalProject/ansibleProject/roles/docker/tasks/docker_compose_install.sh
+
+
+- hosts: jenkins
+  become: true
+  tasks:
+    - name: install jenkins from script
+      script: /home/ubuntu/practicalProject/ansibleProject/roles/jenkins/tasks/jenkins_install.sh
+
+    - name: install Kubernetes from script
+      script: /home/ubuntu/practicalProject/ansibleProject/roles/kubernetes/tasks/kubernetes_install.sh
+
+    - name: install aws_cli from script
+      script: /home/ubuntu/practicalProject/ansibleProject/roles/awscli/tasks/awscli_install.sh

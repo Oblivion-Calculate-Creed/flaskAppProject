@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: install initial programs
+      script: /home/ubuntu/practicalProject/ansibleProject/roles/initialinstall/initial_install.sh
+
+    - name: install docker from script
+      script: /home/ubuntu/practicalProject/ansibleProject/roles/docker/tasks/docket_install.sh
+
+    - name: install docker_compose from script
+      script: /home/ubuntu/practicalProject/ansibleProject/roles/docker/tasks/docker_compose_install.shS
