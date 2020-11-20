@@ -1,0 +1,15 @@
+pipeline {
+  agent any
+  stages {
+    stage('tests and building') {
+      steps {
+        sh './scripts/ssh_pytestVM.sh'
+      }
+    }
+    stage('login and push to dockerhub') {
+      steps {
+        sh './scripts/docker_push.sh'
+      }
+    }
+  }
+}
