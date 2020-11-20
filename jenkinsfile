@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('tests and building') {
       steps {
-        sh './scripts/ssh_pytestVM.sh'
+        sh '/home/ubuntu/practicalProject/scripts/ssh_pytest.sh'
       }
     }
     stage('login and push to dockerhub') {
       steps {
-        sh './scripts/docker_push.sh'
+        sh '/home/ubuntu/practicalProject/scripts/docker_push.sh'
       }
     }
   }
