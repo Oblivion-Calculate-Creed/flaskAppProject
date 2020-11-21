@@ -4,7 +4,7 @@ pipeline {
       dockerusername=credentials('dockerusername')
       dockerpass=credentials('dockerpass')
   }
-  stages
+  stages  {
     stage('docker login') {
         steps {
             sh 'sudo docker login --username=${dockerusername} --password=${dockerpass}'
@@ -25,4 +25,5 @@ pipeline {
               sh '/home/ubuntu/practicalProject/scripts/deploykub.sh'
         }
     }
+  }
 }
