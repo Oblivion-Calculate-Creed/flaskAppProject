@@ -17,17 +17,17 @@ pipeline {
     }
     stage('push to dockerhub front end') {
         steps {
-              sh './scripts/docker_push_frontend.sh'
+              sh 'sudo bash ./scripts/docker_push_frontend.sh'
         }
     }
     stage('push to dockerhub back end') {
         steps {
-              sh './scripts/docker_push_backend.sh'
+              sh 'sudo bash ./scripts/docker_push_backend.sh'
         }
     }
     stage('deploy with kubernetes') {
           steps {
-              sh './scripts/deploykub.sh'
+              sh 'sudo bash ./scripts/deploykub.sh'
         }
     }
   }
