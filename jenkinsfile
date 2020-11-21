@@ -5,6 +5,11 @@ pipeline {
       dockerpass=credentials('dockerpass')
   }
   stages  {
+    stage('tests and builds') {
+      steps {
+        sh './scripts/ssh_pytest.sh'
+      }
+    }
     stage('docker login') {
         steps {
             sh 'sudo docker login --username=${dockerusername} --password=${dockerpass}'
