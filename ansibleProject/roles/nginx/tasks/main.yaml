@@ -1,15 +1,15 @@
-- name: 'Install NGINX'
+- name: "Install NGINX"
   apt:
     name: nginx
     state: latest
-    update_cache: true
+    update_cache: "yes"
 
-- name: 'Start NGINX Service'
+- name: "Start NGINX"
   service:
     name: nginx
     state: started
 
-- name: 'Update apt packages'
+- name: "Update packages"
   apt:
     update_cache: "yes"
     force_apt_get: "yes"

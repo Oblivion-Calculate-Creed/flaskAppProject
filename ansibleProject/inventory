@@ -1,4 +1,4 @@
-[docker]
+[jenkins]
 #uses config file host
 docker
 
@@ -6,7 +6,7 @@ docker
 #uses config file host
 jenkins
 
-[nginx]
+[jenkins]
 #uses config file host
 nginx
 
