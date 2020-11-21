@@ -4,24 +4,25 @@ pipeline {
       dockerusername=credentials('dockerusername')
       dockerpass=credentials('dockerpass')
   }
-    stage('docker login') {
-      steps {
-        sh 'sudo docker login --username=${dockerusername} --password=${dockerpass}'
+  stages
+      stages('docker login') {
+          steps {
+              sh 'sudo docker login --username=${dockerusername} --password=${dockerpass}'
+          }
       }
-    }
-    stage('push to dockerhub front end') {
-      steps {
-        sh '/home/ubuntu/practicalProject/scripts/docker_push_frontend.sh'
+      stage('push to dockerhub front end') {
+          steps {
+              sh '/home/ubuntu/practicalProject/scripts/docker_push_frontend.sh'
+          }
       }
-    }
     stage('push to dockerhub back end') {
-      steps {
-        sh '/home/ubuntu/practicalProject/scripts/docker_push_backend.sh'
+          steps {
+              sh '/home/ubuntu/practicalProject/scripts/docker_push_backend.sh'
+          }
       }
-    }
     stage('deploy with kubernetes') {
-      steps {
-        sh '/home/ubuntu/practicalProject/scripts/deploykub.sh'
+          steps {
+              sh '/home/ubuntu/practicalProject/scripts/deploykub.sh'
+          }
       }
-    }
-  }
+}
