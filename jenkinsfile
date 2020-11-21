@@ -1,14 +1,24 @@
 pipeline {
   agent any
   stages {
-    stage('tests and building') {
+    stage('tests and builds') {
       steps {
         sh '/home/ubuntu/practicalProject/scripts/ssh_pytest.sh'
       }
     }
-    stage('login and push to dockerhub') {
+    stage('push to dockerhub front end') {
       steps {
-        sh '/home/ubuntu/practicalProject/scripts/docker_push.sh'
+        sh '/home/ubuntu/practicalProject/scripts/docker_push_frontend.sh'
+      }
+    }
+    stage('push to dockerhub back end') {
+      steps {
+        sh '/home/ubuntu/practicalProject/scripts/docker_push_backend.sh'
+      }
+    }
+    stage('deploy with kubernetes') {
+      steps {
+        sh '/home/ubuntu/practicalProject/scripts/deploykub.sh'
       }
     }
   }
