@@ -1,9 +1,12 @@
 pipeline {
   agent any
-  stages {
-    stage('tests and builds') {
+  environment{
+      dockerusername=credentials('dockerusername')
+      dockerpass=credentials('dockerpass')
+  }
+    stage('docker login') {
       steps {
-        sh '/home/ubuntu/practicalProject/scripts/ssh_pytest.sh'
+        sh 'sudo docker login --username=${dockerusername} --password=${dockerpass}'
       }
     }
     stage('push to dockerhub front end') {
