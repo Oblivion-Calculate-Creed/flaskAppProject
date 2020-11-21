@@ -1,4 +1,4 @@
-rm -f flaskAppProject/
+rm -f -r flaskAppProject/
 git clone --branch dev https://github.com/Scottynic112/flaskAppProject.git
 cd flaskAppProject
 sudo -E DATABASE_URI=${DATABASE_URI} -E TEST_DATABASE_URI=${TEST_DATABASE_URI} -E SECRET_KEY=${SECRET_KEY} docker-compose up -d
