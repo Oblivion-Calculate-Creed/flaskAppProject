@@ -7,7 +7,7 @@ pipeline {
   stages  {
     stage('tests and builds') {
       steps {
-        sh './scripts/ssh_pytest.sh'
+        sh 'sudo bash ./scripts/ssh_pytest.sh'
       }
     }
     stage('docker login') {
@@ -17,17 +17,17 @@ pipeline {
     }
     stage('push to dockerhub front end') {
         steps {
-              sh './scripts/docker_push_frontend.sh'
+              sh 'sudo bash ./scripts/docker_push_frontend.sh'
         }
     }
     stage('push to dockerhub back end') {
         steps {
-              sh './scripts/docker_push_backend.sh'
+              sh 'sudo bash ./scripts/docker_push_backend.sh'
         }
     }
     stage('deploy with kubernetes') {
           steps {
-              sh './scripts/deploykub.sh'
+              sh 'sudo bash ./scripts/deploykub.sh'
         }
     }
   }
