@@ -5,7 +5,7 @@ pipeline {
       dockerpass=credentials('dockerpass')
   }
   stages
-      stages('docker login') {
+      stage('docker login') {
           steps {
               sh 'sudo docker login --username=${dockerusername} --password=${dockerpass}'
           }
