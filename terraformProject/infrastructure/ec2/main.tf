@@ -39,5 +39,5 @@ resource "aws_instance" "jenkins" {
   lifecycle {
     create_before_destroy       = true
   }
-  associate_public_ip_address = var.associate_public_ip_address
+  associate_public_ip_address   = true
 }

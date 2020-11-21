@@ -1,12 +1,12 @@
-[docker]
+[jenkins]
 #uses config file host
 docker
 
 [jenkins]
-52.49.123.101
+#uses config file host
 jenkins
 
-[nginx]
+[jenkins]
 #uses config file host
 nginx
 

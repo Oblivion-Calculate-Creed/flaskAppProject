@@ -1,12 +1,28 @@
----
-- hosts: all
-  become: true
-  tasks:
-    - name: install initial programs
-      script: /home/ubuntu/practicalProject/ansibleProject/roles/initialinstall/initial_install.sh
+- name: "Install aptitude using apt"
+  apt:
+    name: aptitude
+    state: latest
+    update_cache: yes
+    force_apt_get: yes
 
-    - name: install docker from script
-      script: /home/ubuntu/practicalProject/ansibleProject/roles/docker/tasks/docket_install.sh
+- name: "Installing docker apt dependencies"
+  apt:
+    name: ['apt-transport-https', 'ca-certificates', 'curl', 'gnupg-agent', 'software-properties-common']
+    state: latest
+    update_cache: true
+  become: yes
 
-    - name: install docker_compose from script
-      script: /home/ubuntu/practicalProject/ansibleProject/roles/docker/tasks/docker_compose_install.shS
+- name: "Get apt key"
+  apt_key:
+    url: "https://download.docker.com/linux/ubuntu/gpg"
+
+- name: "Add apt repository"
+  apt_repository:
+    repo: "deb https://download.docker.com/linux/ubuntu bionic stable"
+    state: present
+
+- name: "Install docker"
+  apt:
+    name: ['docker-ce', 'docker-ce-cli', 'containerd.io']
+    state: latest
+    update_cache: true
