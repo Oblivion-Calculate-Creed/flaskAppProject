@@ -17,7 +17,23 @@ spec:
         app: flask
     spec: 
       containers:
-      - name: flaskapp
+      - name: frontend
         image: scottynic112/frontend:latest
         ports: 
         - containerPort: 5000
+        env:
+        - name: DATABASE_URI
+          valueFrom:
+            secretKeyRef:
+              name: credentials
+              key: DATABASE_URI
+        - name: TEST_DATABASE_URI
+          valueFrom:
+            secretKeyRef:
+              name: credentials
+              key: TEST_DATABASE_URI
+        - name: secret_key
+          valueFrom:
+            secretKeyRef:
+              name: credentials
+              key: secret_key
