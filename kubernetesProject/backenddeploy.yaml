@@ -4,20 +4,22 @@ metadata:
   name: backend
   namespace: flaskapp
   labels:
-    app: backend
+    app: flask
+
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: backend
+      app: flask
   template:
     metadata:
       labels:
-        app: backend
+        app: flask
     spec:
       containers:
       - name: backend
         image: scottynic112/backend:latest
+        imagePullPolicy: "Always"
         ports:
         - containerPort: 5001
         env:
