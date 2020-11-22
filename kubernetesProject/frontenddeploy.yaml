@@ -18,6 +18,6 @@ spec:
     spec: 
       containers:
       - name: flaskapp
-        image: scottynic112/front-end:latest
+        image: scottynic112/frontend:latest
         ports: 
         - containerPort: 5000

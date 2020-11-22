@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: scottynic112/back-end:latest
+        image: scottynic112/backend:latest
         ports:
         - containerPort: 5001
         env:
