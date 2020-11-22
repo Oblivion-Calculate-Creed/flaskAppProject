@@ -1,0 +1,34 @@
+pipeline {
+  agent any
+  environment{
+      dockerusername=credentials('dockerusername')
+      dockerpass=credentials('dockerpass')
+  }
+  stages  {
+    stage('tests and builds') {
+      steps {
+        sh 'sudo bash ./scripts/ssh_pytest.sh'
+      }
+    }
+    stage('docker login') {
+        steps {
+            sh 'sudo docker login --username=${dockerusername} --password=${dockerpass}'
+        }
+    }
+    stage('push to dockerhub front end') {
+        steps {
+              sh 'sudo bash ./scripts/docker_push_frontend.sh'
+        }
+    }
+    stage('push to dockerhub back end') {
+        steps {
+              sh 'sudo bash ./scripts/docker_push_backend.sh'
+        }
+    }
+    stage('deploy with kubernetes') {
+          steps {
+              sh 'sudo bash ./scripts/deploykub.sh'
+        }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+[jenkins]
+#uses config file host
+docker
+
+[jenkins]
+#uses config file host
+jenkins
+
+[jenkins]
+#uses config file host
+nginx
+
+[pytest]
+#uses config file host
+pytest
