@@ -2,6 +2,7 @@ version: '3.7'
 services:
   backend:
     build: ./backend
+    image: scottynic112/backend:latest
     container_name: backend
     ports:
     - target: 5001
@@ -13,11 +14,12 @@ services:
     
   frontend:
     build: ./frontend
+    image: scottynic112/frontend:latest
+    container_name: frontend
     ports:
     - target: 5000
       published: 5000
       protocol: tcp
-    container_name: frontend
   nginx:
     build: ./nginx
     ports:
