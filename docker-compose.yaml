@@ -1,14 +1,5 @@
 version: '3.7'
-services:
-  backend:
-    build: ./backend
-    container_name: backend
-    image: scottynic112/backend:latest
-    ports:
-    - target: 5001
-      published: 5001
-      protocol: tcp
-    
+services:     
   frontend:
     build: ./frontend
     container_name: frontend
@@ -17,6 +8,19 @@ services:
     - target: 5000
       published: 5000
       protocol: tcp
+      
+  backend:
+    build: ./backend
+    container_name: backend
+    image: scottynic112/backend:latest
+    ports:
+    - target: 5001
+      published: 5001
+      protocol: tcp
+    environment:
+      DATABASE_URI: ${DATABASE_URI}
+      TEST_DATABASE_URI: ${TEST_DATABASE_URI}
+      
   nginx:
     build: ./nginx
     ports:
