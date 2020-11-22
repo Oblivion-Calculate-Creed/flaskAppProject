@@ -1,0 +1,2 @@
+- name: pytest install 
+  script: "/home/ubuntu/practicalProject/ansibleProject/roles/pytest/tasks/pytest.sh"

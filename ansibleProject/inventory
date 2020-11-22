@@ -8,12 +8,12 @@ jenkins
 
 [jenkins]
 #uses config file host
-nginx
+kubernetes
 
 [jenkins]
 #uses config file host
-kubernetes
+awscli
 
-[pytest]
+[jenkins]
 #uses config file host
-pytest
+sql

@@ -10,4 +10,5 @@
         - kubelet 
         - kubeadm 
         - kubectl
-    - awscli        
+    - awscli   
+    - sql
