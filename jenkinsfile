@@ -7,7 +7,7 @@ pipeline {
   stages  {
     stage('Tests and Builds') {
       steps {
-        sh 'sudo bash ./scripts/ssh_pytest.sh'
+        sh 'sudo bash ./scripts/remote_pytest.sh'
       }
     }
     stage('Log in to Docker') {

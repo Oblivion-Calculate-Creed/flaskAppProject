@@ -1,7 +1,7 @@
 #!/bin/bash
 ssh -i /home/jenkins/.ssh/id_rsa ubuntu@52.50.198.229 << EOF
 
-sudo rm -r CNE_PracticalProject
+sudo rm -r flaskAppProject
 
 git clone https://github.com/Scottynic112/flaskAppProject.git
 
