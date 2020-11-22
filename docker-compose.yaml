@@ -8,9 +8,6 @@ services:
     - target: 5001
       published: 5001
       protocol: tcp
-    environment:
-      DATABASE_URI: ${DATABASE_URI}
-      TEST_DATABASE_URI: ${TEST_DATABASE_URI}
     
   frontend:
     build: ./frontend
