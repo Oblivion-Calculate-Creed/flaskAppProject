@@ -1,5 +1,5 @@
 #!/bin/bash
-ssh -i /home/jenkins/.ssh/id_rsa ubuntu@52.50.198.229 << EOF
+ssh -i /home/ubuntu/.ssh/id_rsa ubuntu@52.50.198.229 << EOF
 
 sudo rm -r flaskAppProject
 
