@@ -18,5 +18,12 @@ module "rds_module" {
 }
 
 module "vpc_module" {
-    source  = "./vpc"
+    source                      = "./vpc"
+}
+
+module "kc_module" {
+    source                      = "./kc"
+    eks_sg_id                   = module.ec2_module.security_group_id
+    eks_sn_id_sub_A             = module.vpc_module.subnet_A_id
+    eks_sn_id_sub_B             = module.vpc_module.subnet_B_id
 }

@@ -7,12 +7,20 @@ resource "aws_subnet" "subnet_A" {
 vpc_id              = aws_vpc.initial_vpc.id
 cidr_block          = var.subnet_A_cidr_block
 availability_zone   = "eu-west-1b"
+map_public_ip_on_launch = true
+tags = {
+        "kubernetes.io/cluster/kubenetes_cluster" : "shared"
+    }
 }
 
 resource "aws_subnet" "subnet_B" {
 vpc_id              = aws_vpc.initial_vpc.id
 cidr_block          = var.subnet_B_cidr_block
 availability_zone   = "eu-west-1a"
+map_public_ip_on_launch = true
+tags = {
+        "kubernetes.io/cluster/kubenetes_cluster" : "shared"
+    }
 }
 
 resource "aws_internet_gateway" "internet_gw" {
