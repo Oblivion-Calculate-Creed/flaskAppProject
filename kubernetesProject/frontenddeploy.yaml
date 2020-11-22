@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: flask-app
+  name: flaskapp
   namespace: flaskapp
   labels: 
     app: flask
@@ -17,7 +17,7 @@ spec:
         app: flask
     spec: 
       containers:
-      - name: flask-app
+      - name: flaskapp
         image: scottynic112/front-end:latest
         ports: 
         - containerPort: 5000
