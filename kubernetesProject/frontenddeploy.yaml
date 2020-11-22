@@ -4,17 +4,17 @@ metadata:
   name: frontend
   namespace: flaskapp
   labels: 
-    app: frontend
+    app: flask
 
 spec: 
   replicas: 3
   selector: 
     matchLabels:
-      app: frontend
+      app: flask
   template: 
     metadata: 
       labels:
-        app: frontend
+        app: flask
     spec: 
       containers:
       - name: frontend
