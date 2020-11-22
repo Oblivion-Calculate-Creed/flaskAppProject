@@ -20,14 +20,3 @@ services:
     environment:
       DATABASE_URI: ${DATABASE_URI}
       TEST_DATABASE_URI: ${TEST_DATABASE_URI}
-      
-  nginx:
-    build: ./nginx
-    ports:
-    - target: 80
-      published: 80
-      protocol: tcp
-    volumes:
-    - type: bind
-      source: ./nginx/nginx.conf
-      target: /etc/nginx/nginx.conf
