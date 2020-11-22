@@ -5,27 +5,27 @@ pipeline {
       dockerpass=credentials('dockerpass')
   }
   stages  {
-    stage('tests and builds') {
+    stage('Tests and Builds') {
       steps {
         sh 'sudo bash ./scripts/ssh_pytest.sh'
       }
     }
-    stage('docker login') {
+    stage('Log in to Docker') {
         steps {
             sh 'sudo docker login --username=${dockerusername} --password=${dockerpass}'
         }
     }
-    stage('push to dockerhub front end') {
+    stage('Docker-push to FrontEnd') {
         steps {
               sh 'sudo bash ./scripts/docker_push_frontend.sh'
         }
     }
-    stage('push to dockerhub back end') {
+    stage('Docker-push to BackEnd') {
         steps {
               sh 'sudo bash ./scripts/docker_push_backend.sh'
         }
     }
-    stage('deploy with kubernetes') {
+    stage('Deploy with Kubernetes') {
           steps {
               sh 'sudo bash ./scripts/deploykub.sh'
         }

@@ -10,6 +10,10 @@ jenkins
 #uses config file host
 nginx
 
+[jenkins]
+#uses config file host
+kubernetes
+
 [pytest]
 #uses config file host
 pytest
