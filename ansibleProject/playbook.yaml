@@ -10,3 +10,4 @@
         - kubelet 
         - kubeadm 
         - kubectl
+    - awscli        
