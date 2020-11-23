@@ -8,7 +8,7 @@ pipeline {
     stage('Tests and Builds') {
       steps {
         sh "chmod +x ./scripts/ssh_pytest.sh"
-        sh 'sudo bash ./scripts/ssh_pytest.sh'
+        sh ' ./scripts/ssh_pytest.sh'
       }
     }
     stage('Log in to Docker') {
