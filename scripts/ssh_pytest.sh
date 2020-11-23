@@ -2,7 +2,7 @@ rm -r flaskAppProject
 
 git clone --branch dev https://github.com/Scottynic112/flaskAppProject.git
 
-cd flaskAppProject
+cd /home/jenkins/flaskAppProject
 
 sudo -E DATABASE_URI=${DATABASE_URI} -E TEST_DATABASE_URI=${TEST_DATABASE_URI} -E SECRET_KEY=${SECRET_KEY} 
 
