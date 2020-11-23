@@ -3,7 +3,7 @@ services:
   frontend:
     build: ./frontend
     container_name: frontend
-    image: scottynic112/frontend:latest
+    image: frontend:latest
     ports:
     - target: 5000
       published: 5000
@@ -12,7 +12,7 @@ services:
   backend:
     build: ./backend
     container_name: backend
-    image: scottynic112/backend:latest
+    image: backend:latest
     ports:
     - target: 5001
       published: 5001

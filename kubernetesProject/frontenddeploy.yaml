@@ -32,8 +32,8 @@ spec:
             secretKeyRef:
               name: credentials
               key: TEST_DATABASE_URI
-        - name: secret_key
+        - name: SECRET_KEY
           valueFrom:
             secretKeyRef:
               name: credentials
-              key: secret_key
+              key: SECRET_KEY
