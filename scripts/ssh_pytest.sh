@@ -1,4 +1,4 @@
-docker-compose ps
+sudo docker-compose ps
 
 rm -r flaskAppProject
 
