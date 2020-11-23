@@ -1,5 +1,3 @@
-sudo docker-compose ps
-
 rm -r flaskAppProject
 
 git clone --branch dev https://github.com/Scottynic112/flaskAppProject.git
